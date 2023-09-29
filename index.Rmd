@@ -1,7 +1,7 @@
 ---
 title: "Gov 50 Final Project"
 author: "Zoe Yu"
-description: "Gender variations across political debates"
+description: "Gender in political deabtes"
 output:
   distill::distill_article:
     self_contained: false
