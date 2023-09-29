@@ -11,4 +11,4 @@ output:
 
 ## Project thoughts
 
-I am interested in exploring data related to the speaking times and topics during debates for male versus female political candidates. I am interested in looking at how gender influences how long a speaker speaks during a debate, as well as what subjects they might emphasize or cover. I am also interested in exploring public responses to different combinations of times, topics, and gender, to see which approaches to debates across gender lines might be most effective towards swaying public opinion to vote for a particular candidate (and does it vary by gender)?
+I am interested in exploring data related to the speaking times and topics during debates for male versus female political candidates. I am interested in looking at how gender influences how long a speaker speaks during a debate, as well as what subjects they might cover or emphasize. I am also interested in exploring public responses to different combinations of times, topics, and gender, to see which approaches to debates might be most effective towards swaying public opinion to vote for a particular candidate (and does this vary by gender)?
