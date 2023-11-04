@@ -1,7 +1,7 @@
 ---
 title: "Gov 50 Final Project"
 author: "Zoe Yu"
-description: "Gender in political debates"
+description: "Female Representation in Film"
 output:
   distill::distill_article:
     self_contained: false
@@ -11,4 +11,28 @@ output:
 
 ## Project thoughts
 
-Does gender impact the topics that presidential candidates, from the primaries to the Presidential Debates between each party nominee, choose to cover, and their stances on these topics? Using transcripts of debates from The Commission on Presidential Debates and UC Santa Barbara's The American Presidency Project, I plan to analyze how gender impacts issue agendas during debates. I hypothesize that female political candidates will tend to cover social issues, like women's rights, compared to economic issues at a higher rate than their male counterparts, as they seek to represent their female constituents and would likely bring up women's rights messaging to bolster their campaigns (e.g. Hillary Clinton in 2016). This pattern has been shown in academic literature such as Kim Fridkin Khan's study on gender messaging in U.S. Senate campaigns and Jason Trucotte's study on differences in gender across presidential debates. My variables in the dataset include several topics such as "abortion," "guns," and "healthcare," which I will classify as either an economic or social issue. Then, I will identify whether the speaker of the topic was male or female. My variables will be coded =0 for economic issue and =1 for social issue, which I would then compare across gender lines to see if economic or social issues arose at a greater proportion for female versus male candidates. I would analyze these variables at both the party primary and presidential debate scale. I would like to investigate if there are differences between these two scales, as well. When I analyze the transcripts to see if female candidates were more likely to speak on social issues during political debates, I should observe a positive correlation between female candidates and social issue topics if my hypothesis is supported.
+What's the relationship between female representation in film and how well the film ends up performing in the box office? One popular measure of fictional female representation, the Bechdel Test, proposes three rules: the movie has to have at least two women in it, the women have to talk to each other, and they have to talk about something other than a man. In this study, I plan to analyze whether or not high-grossing movies pass the Bechdel Test, and to what extent female representation in movies has a stake in its financial performance. I hypothesize that movies that pass the Bechdel Test will be higher-grossing, as passing the Bechdel Test likely lends itself to a more complex, nuanced plotline and story that moviegoers want to see. According to a FiveThirtyEight study that examined the exclusion of women in Hollywood, my hypothesis is in line with how the movies have historically fared. My independent variable is whether or not the movie passes the Bechdel Test, and in particular which three rules that the movie satisfies, and my dependent variable is the movie's grossing. To expand on my study, I plan to also draw data from whether or not the movie was directed by a male or female director to see if gender has an impact on whether or not the movie passes the Bechdel Test and its grossing, as well as to see if the gender of the director has an impact on whether or not the movie passes the Bechdel Test in the first place. 
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+movies <- read_csv("movielatest.csv")
+
+bechdel_test <- read_csv("movies.csv")
+
+movies |>
+  inner_join(bechdel_test) |>
+  mutate(`Bechdel Test` = binary) |>
+  ggplot(mapping = aes(x = gross, color = `Bechdel Test`, na.rm = TRUE)) + 
+  geom_bar() +
+  labs(x = "Movie Grossing", y = "Frequency",
+       title = "Do High-Grossing Movies Pass the Bechdel Test?",
+       subtitle = "Data originated from FiveThirtyEight",
+       caption = "Gov 50 Final Project") +
+  theme_classic()
+```
+
