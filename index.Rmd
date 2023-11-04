@@ -35,4 +35,5 @@ movies |>
        caption = "Gov 50 Final Project") +
   theme_classic()
 ```
+According to data from the barplot, movies that fail the Bechdel Test appear to be clustered towards the lower end of the moving grossing spectrum, while movies that pass the Bechdel test appear to have a higher movie grossing, with the highest-grossing movie being classified as one that passed the Bechdel Test. However, both movies that passed and failed the Bechdel Test appear to be clustered in similar formations towards having a lower grossing, indicating that other factors, like the quality of the movie and the nature of the industry, may be at play. For my next data visualization, I plan to zoom in on both ends of the movie grossing spectrum to examine it at a more precise level, as well as factor in whether the movies were directed by male or female directors.
 
